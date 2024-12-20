@@ -4,14 +4,14 @@ function App() {
   const [urlStatus, setUrlStatus] = useState(false)
 
   useEffect(() => {
-    chrome.runtime.sendMessage({ action: "requestUrlStatus" }, (response) => {
+    chrome.runtime.sendMessage({ action: "requestUrlStatus" }, (response) => { //checks the current tab url as the popup opens or component mounts
       if (response && response.url !== undefined) {
         setUrlStatus(response.url)
       }
     })
   }, [])
 
-  const handleClick = () => {
+  const handleClick = () => { //sends a message to content.js to perform click on all connect buttons
     chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
       const activeTab = tabs[0]
       if (activeTab) {
@@ -24,7 +24,7 @@ function App() {
       }
     })
   }
-
+  //conditional rendering based on the value of urlStatus
   return (
     <div className='flex flex-col items-center w-96 h-60 px-4 pt-4 pb-1 justify-between bg-black text-white'>
       {urlStatus ? (

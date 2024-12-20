@@ -9,5 +9,9 @@ export default defineConfig({
   modules: ['@wxt-dev/module-react', '@wxt-dev/auto-icons'],
   autoIcons: {
     sizes: [16, 32, 48, 96, 128]
+  },
+  manifest: {
+    name: "LinkedIn extension",
+    description: "sends connect request to all suggested people on linkedin"
   }
 });

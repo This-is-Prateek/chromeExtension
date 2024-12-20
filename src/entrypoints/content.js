@@ -1,5 +1,5 @@
 export default defineContentScript({
-  matches: ['https://www.linkedin.com/mynetwork/grow/*'],
+  matches: ['https://www.linkedin.com/mynetwork/grow/*'], //script is injected in sites that matches the url
   main() {
     const connect = () => {
       const buttons = document.querySelectorAll("button")
@@ -20,7 +20,7 @@ export default defineContentScript({
       }
     }
 
-    chrome.runtime.onMessage.addListener((data, sender, sendResponse) => {
+    chrome.runtime.onMessage.addListener((data, sender, sendResponse) => { //listens for the popup script to send message to perform clicks
       if (data.action === "performClick") {
         const result = connect()
         sendResponse({ status: result })
