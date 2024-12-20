@@ -12,6 +12,7 @@ export default defineConfig({
   },
   manifest: {
     name: "LinkedIn extension",
-    description: "sends connect request to all suggested people on linkedin"
+    description: "sends connect request to all suggested people on linkedin",
+    permissions: ["tabs", "activeTab"]
   }
 });

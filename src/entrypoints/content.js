@@ -26,5 +26,6 @@ export default defineContentScript({
         sendResponse({ status: result })
       }
     })
+    console.log("content script loaded");
   },
 });

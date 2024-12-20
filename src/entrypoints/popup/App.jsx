@@ -7,6 +7,7 @@ function App() {
     chrome.runtime.sendMessage({ action: "requestUrlStatus" }, (response) => { //checks the current tab url as the popup opens or component mounts
       if (response && response.url !== undefined) {
         setUrlStatus(response.url)
+        console.log(response.url);
       }
     })
   }, [])
