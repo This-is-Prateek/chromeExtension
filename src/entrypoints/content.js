@@ -13,7 +13,7 @@ export default defineContentScript({
           })
           return "click actions scheduled to perform"
         } else {
-          return "No return buttons available to click"
+          return "No connect buttons available to click"
         }
       } else {
         return "No buttons available to click"
